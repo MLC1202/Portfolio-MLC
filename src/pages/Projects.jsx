@@ -16,22 +16,20 @@ const PROJECTS = [
       'Our focus is to develop a simple and interactive multiplayer system, bringing an experience similar to Kahoot, but entirely built in Java.',
     techs: ['Java', 'MySQL'],
     github: 'https://github.com/MLC1202/ProjetoFinal_LP.git',
-    demo: null, /* 👇 Coloque a URL do deploy se tiver */
+    demo: null,
   },
   {
     id: 2,
     title: 'AUventura Park Website',
     emoji: '🐾',
     image: null, /* 👇 Ex: '/images/petdaycare.png' */
-    status: 'Em desenvolvimento',
+    status: 'Work in Progress',
     statusType: 'wip',
-    shortDesc: 'Website completo para creche de pets com agendamento online.',
+    shortDesc: 'A pet daycare management platform focused on providing a practical, organized, and reliable experience for both pet owners and staff.',
     fullDesc:
-      'Projeto em desenvolvimento de um website para uma creche de animais de estimação. ' +
-      'O sistema inclui agendamento online, cadastro de pets, histórico de visitas e painel ' +
-      'administrativo para os funcionários gerenciarem os atendimentos do dia. ' +
-      /* 👇 Adicione mais detalhes sobre o projeto */
-      'Funcionalidades planejadas: notificações por e-mail, galeria de fotos dos pets e sistema de avaliações.',
+      'This project is a web platform designed for a pet daycare service, created to provide pet owners with a practical and trustworthy way to connect with daily care services for their pets.' + 'The idea is to combine organization, accessibility, and a user-friendly experience in a solution that supports both the business and its customers.' +
+      'The platform was developed with a focus on structuring the service digitally, making it easier to manage information, present the business, and improve communication with pet owners. Beyond the technical side, the project also reflects a business-oriented approach by connecting software development with a real market need. ',
+      
     techs: ['React', 'Node.js', 'JavaScript', 'CSS', 'HTML'],
     github: 'https://github.com/veloy25/Projeto-1-Semestre---ECM516-ECM252.git', 
     demo: null,
@@ -88,7 +86,7 @@ function ProjectCard({ project, onClick }) {
         <div className="project-tags">
           {techs.map(t => <span key={t} className="tech-tag">{t}</span>)}
         </div>
-        <span className="project-hint">Clique para ver mais →</span>
+        <span className="project-hint">Click to see more →</span>
       </div>
     </div>
   );
