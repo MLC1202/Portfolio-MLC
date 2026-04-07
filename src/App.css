@@ -1,0 +1,123 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 1rem 2rem;
+}
+
+
+
+/* ── Títulos de seção ── */
+.section-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  display: inline-block;
+  font-size: 35px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid rgba(104, 160, 99, 0.35);
+  border-radius: 999px;
+  background: rgba(21, 255, 0, 0.04);
+}
+
+.section-header .section-sub {
+  font-size: 14px;
+  color: var(--accent);
+  font-family: monospace;
+}
+
+/* ── Botões ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font);
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+/* ── Cards genéricos ── */
+.card {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  transition: border-color var(--transition);
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.badge-green {
+  background: #0d2a0f;
+  border: 0.5px solid #1a4a1f;
+  color: var(--green);
+}
+
+.badge-yellow {
+  background: #2a1f08;
+  border: 0.5px solid #4a3510;
+  color: var(--yellow);
+}
+
+.footer {
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  border-top: 0.5px solid var(--border);
+  margin-top: 1rem;
+}
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .main-content {
+    padding: 2rem 0.9rem 1.75rem;
+  }
+}
+
