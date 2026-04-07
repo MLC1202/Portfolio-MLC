@@ -25,9 +25,6 @@ export default function App() {
       <main className="main-content">
         {renderPage()}
       </main>
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Matheus Cardoso. All rights reserved.</p>
-      </footer>
     </div>
   );
 }

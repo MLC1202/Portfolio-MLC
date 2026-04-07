@@ -66,6 +66,10 @@ export default function Contact() {
           <img src="/images/contact.jpg" alt="Contact visual" />
         </div>
       </div>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Matheus Cardoso. All rights reserved.</p>
+      </footer>
     </section>
   );
 }
