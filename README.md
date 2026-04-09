@@ -9,21 +9,36 @@ Portfólio pessoal desenvolvido com **React** (Create React App).
 ```
 portfolio/
 ├── public/
+│   ├── images/
+│   │   ├── About.jpg
+│   │   └── home.png
+│   ├── favicon.ico
 │   ├── index.html
-│   └── images/          
+│   └── Resume.pdf
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   └── Navbar.css
+│   │   ├── Navbar.css
+│   │   └── Navbar.jsx
 │   ├── pages/
-│   │   ├── Home.jsx / Home.css
-│   │   ├── About.jsx / About.css
-│   │   ├── Projects.jsx / Projects.css
-│   │   └── Contact.jsx / Contact.css
-│   ├── App.jsx / App.css
-│   ├── index.js
-│   └── index.css
-└── package.json
+│   │   ├── About.css
+│   │   ├── About.jsx
+│   │   ├── Contact.css
+│   │   ├── Contact.jsx
+│   │   ├── Home.css
+│   │   ├── Home.jsx
+│   │   ├── Projects.css
+│   │   ├── Projects.jsx
+│   │   ├── Skills.css
+│   │   └── Skills.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── index.js
+├── .gitignore
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ---
