@@ -2,17 +2,17 @@ import React from 'react';
 import './Navbar.css';
 
 const NAV_LINKS = [
-  { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
 
-export default function Navbar({ activeSection, scrollToSection }) {
+export default function Navbar({ activeSection, scrollToSection, showNavbar }) {
   return (
-    <nav className="navbar">
-      <button className="nav-logo" onClick={() => scrollToSection('home')}>
-        <span className="logo-arrow">&lt;/</span> MATHEUS <span className="logo-arrow">&gt;</span>
+    <nav className={`navbar ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}`}>
+      <button className="nav-brand" onClick={() => scrollToSection('home')}>
+        MLC
       </button>
 
       <ul className="nav-links">
@@ -27,6 +27,15 @@ export default function Navbar({ activeSection, scrollToSection }) {
           </li>
         ))}
       </ul>
-    </nav>
+
+      <a
+        className="nav-resume"
+        href="Resume.pdf"
+        download
+        target="_blank"
+        rel="noreferrer"
+      >
+        Resume
+      </a>    </nav>
   );
 }

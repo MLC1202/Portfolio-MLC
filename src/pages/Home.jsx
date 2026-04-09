@@ -1,50 +1,87 @@
 import React from 'react';
 import './Home.css';
-
-const TECHS = [
-  { name: 'Java', cls: 'java' },
-  { name: 'JavaScript', cls: 'javascript' },
-  { name: 'Python', cls: 'python' },
-  { name: 'HTML & CSS', cls: 'html' },
-  { name: 'MySQL', cls: 'mysql' },
-  { name: 'Git', cls: 'git' },
-  { name: 'React', cls: 'react' },
-  { name: 'Node.js', cls: 'node' },
-];
+import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 
 export default function Home({ scrollToSection }) {
   return (
     <section className="home">
-      <p className="home-greeting">
-        <span role="img" aria-label="aceno">👋</span> Hello! My name is Matheus Cardoso!
-      </p>
-      <h1 className="home-course">
-        Computer Engineer <br /> IMT
-      </h1>
-      <p className="home-desc">
-        Developer focused on building high-quality solutions, combining logical thinking, attention to detail, and a commitment to clean, maintainable code.
-      </p>
-      <div className="home-cta">
-        <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>Contact me</button>
-        <a className="btn btn-outline" href="https://github.com/MLC1202" target="_blank" rel="noreferrer">GitHub</a>
-        <a
-          className="home-resume"
-          href="/Resume.pdf"
-          download
-        >
-          My Resume
-        </a>
+      <div className="home-background">
+        <div className="home-glow home-glow-1"></div>
+        <div className="home-glow home-glow-2"></div>
       </div>
-      <div className="home-tech-section">
-        <p className="tech-label">Technologies and Tools</p>
-        <div className="tech-track-wrapper">
-          <div className="tech-track">
-            {[...TECHS, ...TECHS].map((t, i) => (
-              <span key={i} className={`tech-badge-large ${t.cls}`}>{t.name}</span>
-            ))}
+
+      <div className="home-layout">
+        <div className="home-content">
+          <div className="home-badge">Computer Engineer</div>
+
+          <h1 className="home-title">
+            <span className="home-greeting">Hi, I&apos;m</span>
+            <span className="home-name">Matheus Cardoso</span>
+          </h1>
+
+          <p className="home-description">
+            Developer focused on building high-quality solutions, combining logical thinking, attention to detail, and a commitment to clean, maintainable code.
+          </p>
+
+          <div className="home-actions">
+            <button
+              className="home-btn home-btn-primary"
+              onClick={() => scrollToSection('projects')}
+            >
+              View Projects <span>→</span>
+            </button>
+
+            <button
+              className="home-btn home-btn-secondary"
+              onClick={() => scrollToSection('contact')}
+            >
+              Contact Me
+            </button>
+          </div>
+
+          <div className="home-socials">
+            <a
+              href="https://github.com/MLC1202"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/matheus-cardoso-74a44a268/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a href="mailto:tecocardoso1@gmail.com" aria-label="Email">
+              <FaEnvelope />
+            </a>
+          </div>
+        </div>
+
+        <div className="home-visual">
+          <div className="home-image-frame">
+            <img
+              src="/images/home.png"
+              alt="Matheus Cardoso"
+              className="home-image"
+            />
           </div>
         </div>
       </div>
+
+      <button
+        className="scroll-indicator"
+        onClick={() => scrollToSection('about')}
+        aria-label="Scroll to about section"
+      >
+        <span className="scroll-indicator-wheel"></span>
+      </button>
     </section>
   );
 }
