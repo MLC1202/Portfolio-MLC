@@ -2,17 +2,17 @@ import React, { useEffect, useState, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
+import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import './App.css';
 
-const SECTIONS = ['home', 'about', 'projects', 'contact'];
+const SECTIONS = ['home', 'about', 'skills', 'projects', 'contact'];
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const sectionRefs = useRef({});
 
-  // Scroll suave para a seção
   const scrollToSection = (sectionId) => {
     const element = sectionRefs.current[sectionId];
     if (element) {
@@ -20,7 +20,6 @@ export default function App() {
     }
   };
 
-  // Detectar qual seção está visível durante o scroll
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -40,17 +39,22 @@ export default function App() {
 
     SECTIONS.forEach((section) => {
       const element = sectionRefs.current[section];
-      if (element) {
-        observer.observe(element);
-      }
+      if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
   }, []);
 
+  const showNavbar = activeSection !== 'home';
+
   return (
     <div className="app">
-      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
+      <Navbar
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        showNavbar={showNavbar}
+      />
+
       <main className="main-content">
         <div
           id="home"
@@ -59,6 +63,7 @@ export default function App() {
         >
           <Home scrollToSection={scrollToSection} />
         </div>
+
         <div
           id="about"
           ref={(el) => (sectionRefs.current.about = el)}
@@ -66,6 +71,15 @@ export default function App() {
         >
           <About />
         </div>
+
+        <div
+          id="skills"
+          ref={(el) => (sectionRefs.current.skills = el)}
+          className="section-wrapper"
+        >
+          <Skills />
+        </div>
+
         <div
           id="projects"
           ref={(el) => (sectionRefs.current.projects = el)}
@@ -73,6 +87,7 @@ export default function App() {
         >
           <Projects />
         </div>
+
         <div
           id="contact"
           ref={(el) => (sectionRefs.current.contact = el)}
@@ -81,9 +96,6 @@ export default function App() {
           <Contact />
         </div>
       </main>
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Matheus Cardoso. All rights reserved.</p>
-      </footer>
     </div>
   );
 }
